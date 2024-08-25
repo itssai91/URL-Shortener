@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./includes/header') %>
+</head>
+
+<body>
+    <%- include('./includes/nav') %>
+        <div class="wrapper">
+            <section>
+                <div class=" bg-danger box p-2">
+                    <p class="text-center text-white ">Total Clicks</p>
+                    <p class="text-center text-white ">
+                        <%= clicks %>
+                    </p>
+                </div>
+            </section>
+        </div>
+        <div class="container form">
+            <h3 class="text-center">Track Cliks of Your URL</h3>
+            <form action="/dashboard" method="POST">
+                <input type="hidden" name="CSRFToken" value="<%= csrfToken %>" />
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Enter Your URL</label>
+                    <input type="text" class="form-control" id="url" aria-describedby="url" placeholder="google.com"
+                        name="url">
+                    <small id="emailHelp" class="form-text text-muted text-danger">Please Use Your Shorten URL
+                        to Track</small>
+                </div>
+                <button type="submit" class="btn btn-success">Track</button>
+            </form>
+
+            <% if(errorCode !=null ){ %>
+                <div class="container text-center mt-2 msg-box">
+                    <h5 class="pb-2">Error - 602</h5>
+                    <span class="alert alert-danger pt-2">
+                        <%= errorCode %>
+                    </span>
+                </div>
+                <% } %>
+
+        </div>
+</body>
+
+</html>

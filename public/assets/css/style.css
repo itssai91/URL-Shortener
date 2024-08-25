@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-image img{
+    width: 100%;
+    height: 90vh;
+}
+
+.box p{
+    font-size: 2rem;
+}
+
+.box{
+    border-radius: 2rem;
+    margin: 1rem;
+    box-shadow: 5px 5px 5px 5px #fff3f3a6;
+}
+.wrapper{
+    width: 25rem;
+    display: block;
+    margin: auto;
+}

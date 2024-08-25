@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./includes/header') %>
+        <link rel="stylesheet" href="../css/login.form.css">
+</head>
+
+<body>
+    <%- include('./includes/nav') %>
+        <div class="container form">
+            <h3 class="text-center">Shorten Your Long URL</h3>
+            <form action="/" method="POST">
+                <input type="hidden" name="CSRFToken" value="<%= csrfToken %>" />
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Enter Your URL</label>
+                    <input type="text" class="form-control" id="url" aria-describedby="url" placeholder="google.com"
+                        name="url">
+                    <small id="emailHelp" class="form-text text-muted text-danger">Please Note do not put http// or
+                        https://</small>
+                </div>
+                <button type="submit" class="btn btn-success">Generate Short URL</button>
+            </form>
+        </div>
+
+        <% if(errorCode !=null ){ %>
+            <div class="container text-center mt-2 msg-box">
+                <h5 class="pb-2">Your Shorten URL Generated SuccessFully</h5>
+                <span class="alert alert-success pt-2">
+                    <%= errorCode %>
+                </span>
+            </div>
+            <% } %>
+</body>
+
+</html>
